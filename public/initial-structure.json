@@ -1,0 +1,22 @@
+{
+    "name":"Custom color set",
+    "foreground":"#FFF",
+    "background":"#000",
+    "selectionBackground":"",
+    "black":"#000",
+    "blue":"#0000ff",
+    "brightBlack":"#808080",
+    "brightBlue":"#0308F7",
+    "brightCyan":"#00FFFC",
+    "brightGreen":"#04FF3B",
+    "brightPurple":"#FF00FA",
+    "brightRed":"#FF0029",
+    "brightWhite":"#FFFFFF",
+    "brightYellow":"#FFFF49",
+    "cyan":"#008080",
+    "green":"#008119",
+    "purple":"#800800",
+    "red":"#80010F",
+    "white":"#C0C0C0",
+    "yellow":"#808020"
+}

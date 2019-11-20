@@ -1,0 +1,35 @@
+ header{
+    display:flex;
+    align-items:center;
+  
+  }
+   header section:first-of-type{
+    display:flex;
+    align-items:center;
+    height:1em;
+    background:white;
+    padding:0.5em;
+    width:fit-content;
+    border-top-left-radius:0.25em;
+    border-top-right-radius:0.25em;
+  }
+   header svg{
+    margin:0 0.5em;
+  }
+  
+   header section:first-of-type span{
+    margin:0;
+    font-size:12px;
+  }
+  
+   header section:first-of-type img{
+    height:100%;
+    width:auto;
+  }
+  
+  
+   header section:last-of-type{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+  }

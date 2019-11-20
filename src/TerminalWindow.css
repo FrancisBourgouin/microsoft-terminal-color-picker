@@ -1,0 +1,25 @@
+
+ main{
+    height:100%;
+    width:100%;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+    text-align: left;
+  }
+   main .commandPrompt{
+    margin:0.25em 0;
+  }
+   main .lsResult{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+   main .lsResult span{
+    display:inline-block;
+    margin:0em 0;
+    width:24%;
+  }
+  
+   main .yarnResult p{
+    margin:0;
+  }

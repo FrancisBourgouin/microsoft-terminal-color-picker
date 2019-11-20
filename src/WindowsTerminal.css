@@ -1,0 +1,10 @@
+.windowsTerminal {
+    width:calc(100% - 450px);
+    height:100%;
+    background:#e0e0e0;
+    box-shadow:0 0 10px -5px rgba(223, 214, 214, 0.5);
+    padding:0.25em;
+    display:flex;
+    flex-direction:column;
+    box-sizing:border-box;
+  }

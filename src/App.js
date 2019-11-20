@@ -44,6 +44,14 @@ function App() {
 
     return JSON.stringify(output, null, 2)
   }
+
+  const importJSON = (incoming) => {
+    const parsedJSON = JSON.parse(incoming)
+    setSchemaName(parsedJSON.name)
+    delete parsedJSON.name
+    setColorScheme(parsedJSON)
+  }
+
 const colorPickerOptions = Object.keys(colorScheme).map( color => {
   return(
     <li key={color}>
@@ -71,12 +79,15 @@ const colorPickerOptions = Object.keys(colorScheme).map( color => {
       }
       {showJSON &&
         <div className="showJSON">
-          <textarea>
+          <div className="contentJSON">
+            <pre contentEditable >
+
             {buildJSON()}
-          </textarea>
+            </pre>
+          </div>
           <div>
-            <button onClick={() => setShowJSON(prev => !prev)}>Show JSON</button>
-            <button onClick={() => setShowJSON(prev => !prev)}>Import JSON</button>
+            <button onClick={() => setShowJSON(prev => !prev)}>Show Color Picker</button>
+            <button onClick={() => importJSON( document.querySelector('pre').textContent )}>Import current JSON values</button>
           </div> 
         </div>
       }

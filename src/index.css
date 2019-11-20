@@ -85,10 +85,12 @@ body{
   box-sizing: border-box !important;
 }
 
-.colorPicker > div:last-of-type{
+.colorPicker > div:last-of-type,
+.showJSON > div:last-of-type{
   display: flex;
   justify-content: space-between;
 }
+
 .showJSON > div > button,
 .colorPicker > div > button {
   margin-top:auto;
@@ -123,13 +125,19 @@ body{
 
 .showJSON{
   width:400px;
-  height:100% !important;
-  background:#e0e0e0;
+  height:100%;
   display:flex;
   height:auto;
   justify-content: space-between;
   flex-direction:column;
 }
-.showJSON textarea{
-  height:100%;
+
+.showJSON .contentJSON{
+  resize: none;
+  background:#e0e0e0;
+  padding:0 1em;
+  font-size:1.5em;
+  box-sizing: border-box;
+  border-radius:0.25em;
+  margin-bottom:1em;
 }

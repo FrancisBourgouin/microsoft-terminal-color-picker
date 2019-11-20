@@ -33,31 +33,46 @@ body{
 .colorPicker{
   width:400px;
   height:100% !important;
-  background:#e0e0e0;
   display:flex;
   height:auto;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-direction:column;
 }
 .colorPicker ul {
   display:flex;
   flex-wrap:wrap;
-  width:48%;
-  flex-direction:column;
   align-items: flex-start;
-  justify-content: space-evenly;
-  padding-left:0.5em;
+  justify-content: space-around;
+  background:#e0e0e0;
+  padding:0;
+  padding:0.5em;
+  border-radius:0.2em;
+  margin:1em 0
+}
+.colorPicker ul h1{
+  width:100%;
+  font-size:1.2em;
+  margin:0 0 0.5em;
+
 }
 .colorPicker ul li{
   list-style-type:none;
-  
-  
-  width:100%;
+  width:25%;
+  box-sizing: border-box;
+  padding:0.2em;
 }
 .colorPicker ul li label{
   border:0.2em solid black;
   padding:0.15em 0.25em;
   box-sizing: border-box;
-  display:block;
+  display:inline-block;
+  width:100%;
+  text-align: center;
+  font-size:0.8em;
+  background:white;
+}
+.colorPicker ul li:last-of-type{
+  margin-right:auto;
 }
 .colorPicker ul li input{
   display:none;
@@ -65,16 +80,16 @@ body{
 .colorPicker ul li input:checked ~ label{
   font-weight:bold;
 }
-.colorPicker > div {
-  width:45%;
-  display: flex;
-  flex-direction: column;
-}
-.colorPicker > div .sketch-picker{
+.colorPicker .sketch-picker{
   width:100% !important;
   box-sizing: border-box !important;
 }
 
+.colorPicker > div:last-of-type{
+  display: flex;
+  justify-content: space-between;
+}
+.showJSON > div > button,
 .colorPicker > div > button {
   margin-top:auto;
   border:1px solid #000;
@@ -83,12 +98,27 @@ body{
   background:white;
   font-weight:bold;
   padding:1em 0.5em;
+  width:49%;
+  box-sizing: border-box;
+}
+.showJSON > div > button:first-of-type,
+.colorPicker > div > button:first-of-type{
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
+}
+.showJSON > div > button:last-of-type,
+.colorPicker > div > button:last-of-type{
+  border-top-right-radius: 0.25em;
+  border-bottom-right-radius: 0.25em;
 }
 
-.colorPicker > div > input {
-  margin:0.5em 0;
+.colorPicker > input {
+  margin:1em 0 0;
+  display:block;
+  padding:0.5em 0.5em;
+  border-radius:0.25em;
+  border-style: solid;
 }
-
 
 
 .showJSON{

@@ -6,7 +6,7 @@ import { SketchPicker } from 'react-color';
 function App() {
   const [selectedColor, setSelectedColor] = useState("")
   const [showJSON, setShowJSON] = useState(false)
-  const [schemaName, setSchemaName] = useState("Custom Schema")
+  const [schemaName, setSchemaName] = useState("")
   const [colorScheme, setColorScheme] = useState(
     {
       background: "#000",
@@ -57,13 +57,15 @@ const colorPickerOptions = Object.keys(colorScheme).map( color => {
       <WindowsTerminal colorScheme={colorScheme} />
       {!showJSON && 
         <div className="colorPicker">
+        <SketchPicker color={colorScheme[selectedColor]} onChange={ updateColor } />
+            <input type="text" id="schemaName" name="schemaName" value={schemaName} onChange={ e => setSchemaName(e.target.value)} placeholder="Enter Schema Name"></input>
           <ul>
+            <h1>Color names:</h1>
             {colorPickerOptions}
-          </ul>
+          </ul> 
           <div>
-            <SketchPicker color={colorScheme[selectedColor]} onChange={ updateColor } />
-            <input type="text" id="schemaName" name="schemaName" value={schemaName} onChange={ e => setSchemaName(e.target.value)}></input>
             <button onClick={() => setShowJSON(prev => !prev)}>Show JSON</button>
+            <button onClick={() => setShowJSON(prev => !prev)}>Import JSON</button>
           </div>         
         </div>
       }
@@ -72,7 +74,10 @@ const colorPickerOptions = Object.keys(colorScheme).map( color => {
           <textarea>
             {buildJSON()}
           </textarea>
-          <button onClick={() => setShowJSON(prev => !prev)}>Show Color Picker</button>
+          <div>
+            <button onClick={() => setShowJSON(prev => !prev)}>Show JSON</button>
+            <button onClick={() => setShowJSON(prev => !prev)}>Import JSON</button>
+          </div> 
         </div>
       }
     </div>

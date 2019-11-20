@@ -29,4 +29,4 @@
 
 ## Live example of the App
 
-http://squalid-channel.surge.sh/
+http://windows-terminal-color-scheme-builder.surge.sh

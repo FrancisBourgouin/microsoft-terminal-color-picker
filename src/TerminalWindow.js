@@ -2,18 +2,23 @@ import React from 'react';
 import './TerminalWindow.css';
 
 export function TerminalWindow(props) {
-    const {colorStyling} = props;
-
+    const {colorStyling, colorScheme} = props;
+    const coloredTextSet = Object.keys(colorScheme).map( color => {
+        return <span style={{color:colorScheme[color]}}>{color}</span>
+    })
+    const coloredBackgroundSet = Object.keys(colorScheme).map( color => {
+        return <span style={{backgroundColor:colorScheme[color]}}><i style={{color:colorScheme[color]}}>{color}</i></span>
+    })
     return(
         <main style={colorStyling.background}>
           <section className="commandPrompt">
             <span style={colorStyling.brightGreen}>francis@francisle.ninja</span>
             <span style={colorStyling.foreground}>:</span>
-            <span style={colorStyling.blue}>~/windows-terminal-color-picker</span>
+            <span style={colorStyling.brightBlue}>~/windows-terminal-color-picker</span>
             <span style={colorStyling.foreground}>$ ls</span>            
           </section>
           <section className="lsResult">
-            <span style={colorStyling.blue} >secret-project-folder</span>
+            <span style={colorStyling.brightBlue} >secret-project-folder</span>
             <span style={colorStyling.brightGreen} >exec-chicken-dance.sh</span>
             <span style={colorStyling.brightYellow} >media-device</span>
             <span style={colorStyling.brightCyan} >valid-symlink</span>
@@ -25,7 +30,7 @@ export function TerminalWindow(props) {
           <section className="commandPrompt">
           <span style={colorStyling.brightGreen}>francis@francisle.ninja</span>
             <span style={colorStyling.foreground}>:</span>
-            <span style={colorStyling.blue}>~/windows-terminal-color-picker</span>
+            <span style={colorStyling.brightBlue}>~/windows-terminal-color-picker</span>
             <span style={colorStyling.foreground}>$ yarn add @something/examplepackage</span>           
           </section>
           <section className="yarnResult">
@@ -52,7 +57,25 @@ export function TerminalWindow(props) {
           <section className="commandPrompt">
           <span style={colorStyling.brightGreen}>francis@francisle.ninja</span>
             <span style={colorStyling.foreground}>:</span>
-            <span style={colorStyling.blue}>~/windows-terminal-color-picker</span>
+            <span style={colorStyling.brightBlue}>~/windows-terminal-color-picker</span>
+            <span style={colorStyling.foreground}>$ list all colored text</span>           
+          </section>
+          <section className="lsResult">
+              {coloredTextSet}
+          </section>
+          <section className="commandPrompt">
+          <span style={colorStyling.brightGreen}>francis@francisle.ninja</span>
+            <span style={colorStyling.foreground}>:</span>
+            <span style={colorStyling.brightBlue}>~/windows-terminal-color-picker</span>
+            <span style={colorStyling.foreground}>$ list all colors as bg</span>           
+          </section>
+          <section className="bgColorList">
+              {coloredBackgroundSet}
+          </section>
+          <section className="commandPrompt">
+          <span style={colorStyling.brightGreen}>francis@francisle.ninja</span>
+            <span style={colorStyling.foreground}>:</span>
+            <span style={colorStyling.brightBlue}>~/windows-terminal-color-picker</span>
             <span style={colorStyling.foreground}>$ </span>           
           </section>
         </main>

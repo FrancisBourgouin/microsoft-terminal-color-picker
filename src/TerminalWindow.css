@@ -9,17 +9,22 @@
    main .commandPrompt{
     margin:0.25em 0;
   }
-   main .lsResult{
+   main .lsResult,
+   main .bgColorList{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-   main .lsResult span{
+   main .lsResult span,
+   main .bgColorList span{
     display:inline-block;
     margin:0em 0;
     width:24%;
   }
-  
+  main .bgColorList span i{
+      font-style:normal;
+    filter: invert(1) grayscale(1);
+  }
    main .yarnResult p{
     margin:0;
   }

@@ -28,7 +28,7 @@ export function WindowsTerminal(props){
       return(
         <div className="windowsTerminal">
         <TerminalHeader />
-        <TerminalWindow colorStyling={colorStyling} />
+        <TerminalWindow colorStyling={colorStyling} colorScheme={colorScheme}/>
       </div>
       )
 }
